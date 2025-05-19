@@ -2,8 +2,8 @@
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your/repo.git
-   cd your_project
+   git@github.com:hedgehogoutfit/TreeMenu.git
+   
    ```
 
 2. Run setup:
