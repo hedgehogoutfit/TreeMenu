@@ -3,6 +3,7 @@
 pip install -r requirements.txt
 
 # Migrate database
+python manage.py makemigrations
 python manage.py migrate
 
 # Load mock data
