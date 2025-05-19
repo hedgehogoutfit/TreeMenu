@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from your_app.models import Menu, MenuItem
+from menus.models import Menu, MenuItem
 from django.contrib.auth.models import User
 
 
@@ -16,13 +16,14 @@ class Command(BaseCommand):
 
         # Create mock menu
         main_menu = Menu.objects.create(name="Main Navigation")
+        second_menu = Menu.objects.create(name="Second Navigation")
 
         # Create menu items
         MenuItem.objects.bulk_create([
-            MenuItem(menu=main_menu, name="Home", url="/"),
-            MenuItem(menu=main_menu, name="Products", parent=None),
+            MenuItem(menu=main_menu, name="Home"),
+            MenuItem(menu=second_menu, name="Products"),
             MenuItem(menu=main_menu, name="Premium", parent_id=2),  # Child of Products
-            MenuItem(menu=main_menu, name="Contact", url="/contact"),
+            MenuItem(menu=main_menu, name="Contact"),
         ])
 
         self.stdout.write(self.style.SUCCESS("Mock data loaded!"))
